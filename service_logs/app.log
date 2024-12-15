@@ -1,0 +1,21 @@
+2024-11-26T07:24:21.762Z  INFO 1 --- [toolbox] [main] c.accutrak.toolbox.ToolboxApplication    : Starting ToolboxApplication v1.1.1-rc8 using Java 17-ea with PID 1 (/accutrak/toolbox/app.jar started by root in /accutrak/toolbox)
+2024-11-26T07:24:21.792Z  INFO 1 --- [toolbox] [main] c.accutrak.toolbox.ToolboxApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-11-26T07:24:24.129Z  INFO 1 --- [toolbox] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-26T07:24:24.491Z  INFO 1 --- [toolbox] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 335 ms. Found 11 JPA repository interfaces.
+2024-11-26T07:24:27.382Z  INFO 1 --- [toolbox] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
+2024-11-26T07:24:27.595Z  INFO 1 --- [toolbox] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5647 ms
+2024-11-26T07:24:29.388Z  INFO 1 --- [toolbox] [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.22.3 by Redgate
+2024-11-26T07:24:29.390Z  INFO 1 --- [toolbox] [main] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
+2024-11-26T07:24:29.393Z  INFO 1 --- [toolbox] [main] o.f.c.internal.license.VersionPrinter    : 
+2024-11-26T07:24:29.591Z  INFO 1 --- [toolbox] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://toolbox-db:5432/toolbox (PostgreSQL 14.13)
+2024-11-26T07:24:30.078Z  INFO 1 --- [toolbox] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.304s)
+2024-11-26T07:24:30.174Z  INFO 1 --- [toolbox] [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 2
+2024-11-26T07:24:30.177Z  WARN 1 --- [toolbox] [main] o.f.core.internal.command.DbMigrate      : Schema "public" has a version (2) that is newer than the latest available migration (1) !
+2024-11-26T07:24:30.193Z  INFO 1 --- [toolbox] [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2024-11-26T07:24:30.447Z  INFO 1 --- [toolbox] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-11-26T07:24:30.518Z  INFO 1 --- [toolbox] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@120350eb
+2024-11-26T07:24:30.523Z  INFO 1 --- [toolbox] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-11-26T07:24:30.698Z  INFO 1 --- [toolbox] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-26T07:24:30.984Z  INFO 1 --- [toolbox] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-11-26T07:24:31.200Z  INFO 1 --- [toolbox] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-26T07:24:32.186Z  INFO 1 --- [toolbox] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer

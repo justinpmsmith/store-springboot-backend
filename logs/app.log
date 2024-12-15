@@ -1,0 +1,452 @@
+2024-12-15T09:44:13.514+02:00  INFO 31400 --- [AllianceSeedsApi] [main] c.accutrak.toolbox.ToolboxApplication    : Starting ToolboxApplication using Java 19.0.2 with PID 31400 (C:\pHome\Projects\allianceSeeds\backend\AlianceSeeds-backend\target\classes started by Justin Smith in C:\pHome\Projects\allianceSeeds\backend\AlianceSeeds-backend)
+2024-12-15T09:44:13.529+02:00  INFO 31400 --- [AllianceSeedsApi] [main] c.accutrak.toolbox.ToolboxApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-12-15T09:44:15.840+02:00  INFO 31400 --- [AllianceSeedsApi] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-15T09:44:16.180+02:00  INFO 31400 --- [AllianceSeedsApi] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 315 ms. Found 11 JPA repository interfaces.
+2024-12-15T09:44:17.777+02:00  INFO 31400 --- [AllianceSeedsApi] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9091 (http)
+2024-12-15T09:44:17.798+02:00  INFO 31400 --- [AllianceSeedsApi] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-15T09:44:17.800+02:00  INFO 31400 --- [AllianceSeedsApi] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-12-15T09:44:17.888+02:00  INFO 31400 --- [AllianceSeedsApi] [main] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring embedded WebApplicationContext
+2024-12-15T09:44:17.889+02:00  INFO 31400 --- [AllianceSeedsApi] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4203 ms
+2024-12-15T09:44:18.401+02:00  INFO 31400 --- [AllianceSeedsApi] [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.22.3 by Redgate
+2024-12-15T09:44:18.402+02:00  INFO 31400 --- [AllianceSeedsApi] [main] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
+2024-12-15T09:44:18.402+02:00  INFO 31400 --- [AllianceSeedsApi] [main] o.f.c.internal.license.VersionPrinter    : 
+2024-12-15T09:44:18.435+02:00  WARN 31400 --- [AllianceSeedsApi] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08001
+Error Code : 0
+Message    : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+
+2024-12-15T09:44:18.440+02:00  INFO 31400 --- [AllianceSeedsApi] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-12-15T09:44:18.461+02:00  INFO 31400 --- [AllianceSeedsApi] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-12-15T09:44:18.508+02:00 ERROR 31400 --- [AllianceSeedsApi] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08001
+Error Code : 0
+Message    : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234) ~[spring-context-6.1.5.jar:6.1.5]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952) ~[spring-context-6.1.5.jar:6.1.5]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.5.jar:6.1.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.4.jar:3.2.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.4.jar:3.2.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.4.jar:3.2.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.4.jar:3.2.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.4.jar:3.2.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.4.jar:3.2.4]
+	at com.accutrak.toolbox.ToolboxApplication.main(ToolboxApplication.java:14) ~[classes/:na]
+Caused by: org.flywaydb.core.internal.exception.FlywaySqlException: Unable to obtain connection from database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08001
+Error Code : 0
+Message    : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:60) ~[flyway-core-9.22.3.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:74) ~[flyway-core-9.22.3.jar:na]
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:142) ~[flyway-core-9.22.3.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:140) ~[flyway-core-9.22.3.jar:na]
+	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:66) ~[spring-boot-autoconfigure-3.2.4.jar:3.2.4]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-6.1.5.jar:6.1.5]
+	... 18 common frames omitted
+Caused by: org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:342) ~[postgresql-42.6.2.jar:42.6.2]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54) ~[postgresql-42.6.2.jar:42.6.2]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263) ~[postgresql-42.6.2.jar:42.6.2]
+	at org.postgresql.Driver.makeConnection(Driver.java:443) ~[postgresql-42.6.2.jar:42.6.2]
+	at org.postgresql.Driver.connect(Driver.java:297) ~[postgresql-42.6.2.jar:42.6.2]
+	at org.springframework.jdbc.datasource.SimpleDriverDataSource.getConnectionFromDriver(SimpleDriverDataSource.java:144) ~[spring-jdbc-6.1.5.jar:6.1.5]
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnectionFromDriver(AbstractDriverBasedDataSource.java:205) ~[spring-jdbc-6.1.5.jar:6.1.5]
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnection(AbstractDriverBasedDataSource.java:169) ~[spring-jdbc-6.1.5.jar:6.1.5]
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:48) ~[flyway-core-9.22.3.jar:na]
+	... 24 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:535) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:585) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:666) ~[na:na]
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:243) ~[postgresql-42.6.2.jar:42.6.2]
+	at org.postgresql.core.PGStream.<init>(PGStream.java:98) ~[postgresql-42.6.2.jar:42.6.2]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:132) ~[postgresql-42.6.2.jar:42.6.2]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258) ~[postgresql-42.6.2.jar:42.6.2]
+	... 32 common frames omitted
+
+2024-12-15T09:52:02.398+02:00  INFO 37996 --- [AllianceSeedsApi] [main] c.accutrak.toolbox.ToolboxApplication    : Starting ToolboxApplication using Java 19.0.2 with PID 37996 (C:\pHome\Projects\allianceSeeds\backend\AlianceSeeds-backend\target\classes started by Justin Smith in C:\pHome\Projects\allianceSeeds\backend\AlianceSeeds-backend)
+2024-12-15T09:52:02.400+02:00  INFO 37996 --- [AllianceSeedsApi] [main] c.accutrak.toolbox.ToolboxApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-12-15T09:52:04.217+02:00  INFO 37996 --- [AllianceSeedsApi] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-15T09:52:04.462+02:00  INFO 37996 --- [AllianceSeedsApi] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 236 ms. Found 11 JPA repository interfaces.
+2024-12-15T09:52:06.110+02:00  INFO 37996 --- [AllianceSeedsApi] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9091 (http)
+2024-12-15T09:52:06.124+02:00  INFO 37996 --- [AllianceSeedsApi] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-15T09:52:06.124+02:00  INFO 37996 --- [AllianceSeedsApi] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-12-15T09:52:06.214+02:00  INFO 37996 --- [AllianceSeedsApi] [main] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring embedded WebApplicationContext
+2024-12-15T09:52:06.215+02:00  INFO 37996 --- [AllianceSeedsApi] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3702 ms
+2024-12-15T09:52:06.948+02:00  INFO 37996 --- [AllianceSeedsApi] [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.22.3 by Redgate
+2024-12-15T09:52:06.949+02:00  INFO 37996 --- [AllianceSeedsApi] [main] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
+2024-12-15T09:52:06.950+02:00  INFO 37996 --- [AllianceSeedsApi] [main] o.f.c.internal.license.VersionPrinter    : 
+2024-12-15T09:52:07.018+02:00  INFO 37996 --- [AllianceSeedsApi] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/toolbox (PostgreSQL 14.13)
+2024-12-15T09:52:07.204+02:00  INFO 37996 --- [AllianceSeedsApi] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.095s)
+2024-12-15T09:52:07.270+02:00  INFO 37996 --- [AllianceSeedsApi] [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 2
+2024-12-15T09:52:07.270+02:00  WARN 37996 --- [AllianceSeedsApi] [main] o.f.core.internal.command.DbMigrate      : Schema "public" has a version (2) that is newer than the latest available migration (1) !
+2024-12-15T09:52:07.278+02:00  INFO 37996 --- [AllianceSeedsApi] [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2024-12-15T09:52:07.516+02:00  INFO 37996 --- [AllianceSeedsApi] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-15T09:52:07.586+02:00  INFO 37996 --- [AllianceSeedsApi] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4e974b9e
+2024-12-15T09:52:07.592+02:00  INFO 37996 --- [AllianceSeedsApi] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-15T09:52:07.747+02:00  INFO 37996 --- [AllianceSeedsApi] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-15T09:52:07.960+02:00  INFO 37996 --- [AllianceSeedsApi] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-12-15T09:52:08.062+02:00  INFO 37996 --- [AllianceSeedsApi] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-15T09:52:08.593+02:00  INFO 37996 --- [AllianceSeedsApi] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-15T09:52:10.293+02:00  INFO 37996 --- [AllianceSeedsApi] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-15T09:52:10.407+02:00  INFO 37996 --- [AllianceSeedsApi] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-15T09:52:11.696+02:00  WARN 37996 --- [AllianceSeedsApi] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-15T09:52:13.248+02:00  INFO 37996 --- [AllianceSeedsApi] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@557f0a39, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@50508ed3, org.springframework.security.web.context.SecurityContextHolderFilter@6a4c4261, org.springframework.security.web.header.HeaderWriterFilter@56114349, org.springframework.web.filter.CorsFilter@d319d2c, org.springframework.security.web.authentication.logout.LogoutFilter@57e83608, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@4c9235c0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@17d606c9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6f45a2fd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@23acd55e, org.springframework.security.web.session.SessionManagementFilter@2b592f17, org.springframework.security.web.access.ExceptionTranslationFilter@4f8488ef, org.springframework.security.web.access.intercept.AuthorizationFilter@526a1b51]
+2024-12-15T09:52:14.079+02:00  INFO 37996 --- [AllianceSeedsApi] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9091 (http) with context path '/api/v1'
+2024-12-15T09:52:14.097+02:00  INFO 37996 --- [AllianceSeedsApi] [main] c.accutrak.toolbox.ToolboxApplication    : Started ToolboxApplication in 12.699 seconds (process running for 13.451)
+2024-12-15T09:52:52.134+02:00  INFO 37996 --- [AllianceSeedsApi] [http-nio-9091-exec-2] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-15T09:52:52.135+02:00  INFO 37996 --- [AllianceSeedsApi] [http-nio-9091-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-15T09:52:52.139+02:00  INFO 37996 --- [AllianceSeedsApi] [http-nio-9091-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2024-12-15T09:54:04.902+02:00  INFO 37996 --- [AllianceSeedsApi] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-15T09:54:04.914+02:00  INFO 37996 --- [AllianceSeedsApi] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-15T09:54:04.929+02:00  INFO 37996 --- [AllianceSeedsApi] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-15T09:56:01.034+02:00  INFO 35876 --- [AllianceSeedsApi] [main] c.accutrak.toolbox.ToolboxApplication    : Starting ToolboxApplication using Java 19.0.2 with PID 35876 (C:\pHome\Projects\allianceSeeds\backend\AlianceSeeds-backend\target\classes started by Justin Smith in C:\pHome\Projects\allianceSeeds\backend\AlianceSeeds-backend)
+2024-12-15T09:56:01.040+02:00  INFO 35876 --- [AllianceSeedsApi] [main] c.accutrak.toolbox.ToolboxApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-12-15T09:56:02.998+02:00  INFO 35876 --- [AllianceSeedsApi] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-15T09:56:03.220+02:00  INFO 35876 --- [AllianceSeedsApi] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 212 ms. Found 11 JPA repository interfaces.
+2024-12-15T09:56:05.001+02:00  INFO 35876 --- [AllianceSeedsApi] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9091 (http)
+2024-12-15T09:56:05.015+02:00  INFO 35876 --- [AllianceSeedsApi] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-15T09:56:05.015+02:00  INFO 35876 --- [AllianceSeedsApi] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-12-15T09:56:05.120+02:00  INFO 35876 --- [AllianceSeedsApi] [main] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring embedded WebApplicationContext
+2024-12-15T09:56:05.121+02:00  INFO 35876 --- [AllianceSeedsApi] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3947 ms
+2024-12-15T09:56:05.891+02:00  INFO 35876 --- [AllianceSeedsApi] [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.22.3 by Redgate
+2024-12-15T09:56:05.891+02:00  INFO 35876 --- [AllianceSeedsApi] [main] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
+2024-12-15T09:56:05.891+02:00  INFO 35876 --- [AllianceSeedsApi] [main] o.f.c.internal.license.VersionPrinter    : 
+2024-12-15T09:56:05.981+02:00  INFO 35876 --- [AllianceSeedsApi] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/toolbox (PostgreSQL 14.13)
+2024-12-15T09:56:06.105+02:00  INFO 35876 --- [AllianceSeedsApi] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.067s)
+2024-12-15T09:56:06.196+02:00  INFO 35876 --- [AllianceSeedsApi] [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 2
+2024-12-15T09:56:06.196+02:00  WARN 35876 --- [AllianceSeedsApi] [main] o.f.core.internal.command.DbMigrate      : Schema "public" has a version (2) that is newer than the latest available migration (1) !
+2024-12-15T09:56:06.204+02:00  INFO 35876 --- [AllianceSeedsApi] [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2024-12-15T09:56:06.363+02:00  INFO 35876 --- [AllianceSeedsApi] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-15T09:56:06.434+02:00  INFO 35876 --- [AllianceSeedsApi] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4e974b9e
+2024-12-15T09:56:06.437+02:00  INFO 35876 --- [AllianceSeedsApi] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-15T09:56:06.572+02:00  INFO 35876 --- [AllianceSeedsApi] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-15T09:56:06.739+02:00  INFO 35876 --- [AllianceSeedsApi] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-12-15T09:56:06.843+02:00  INFO 35876 --- [AllianceSeedsApi] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-15T09:56:07.353+02:00  INFO 35876 --- [AllianceSeedsApi] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-15T09:56:08.973+02:00  INFO 35876 --- [AllianceSeedsApi] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-15T09:56:09.050+02:00  INFO 35876 --- [AllianceSeedsApi] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-15T09:56:10.462+02:00  WARN 35876 --- [AllianceSeedsApi] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-15T09:56:11.710+02:00  INFO 35876 --- [AllianceSeedsApi] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1ae69abe, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@557f0a39, org.springframework.security.web.context.SecurityContextHolderFilter@46c7c593, org.springframework.security.web.header.HeaderWriterFilter@27a8bfa1, org.springframework.web.filter.CorsFilter@50508ed3, org.springframework.security.web.authentication.logout.LogoutFilter@4a66949a, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@6ccd3cf1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@88fe9a8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@17d606c9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@d319d2c, org.springframework.security.web.session.SessionManagementFilter@31e3b882, org.springframework.security.web.access.ExceptionTranslationFilter@29f72685, org.springframework.security.web.access.intercept.AuthorizationFilter@3a33d655]
+2024-12-15T09:56:12.310+02:00  INFO 35876 --- [AllianceSeedsApi] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9091 (http) with context path '/api/v1'
+2024-12-15T09:56:12.327+02:00  INFO 35876 --- [AllianceSeedsApi] [main] c.accutrak.toolbox.ToolboxApplication    : Started ToolboxApplication in 12.361 seconds (process running for 13.151)
+2024-12-15T09:56:22.317+02:00  INFO 35876 --- [AllianceSeedsApi] [http-nio-9091-exec-1] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-15T09:56:22.317+02:00  INFO 35876 --- [AllianceSeedsApi] [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-15T09:56:22.320+02:00  INFO 35876 --- [AllianceSeedsApi] [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-12-15T10:17:22.409+02:00  INFO 35876 --- [AllianceSeedsApi] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-15T10:17:22.414+02:00  INFO 35876 --- [AllianceSeedsApi] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-15T10:17:22.422+02:00  INFO 35876 --- [AllianceSeedsApi] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-15T10:35:00.591+02:00  INFO 20196 --- [AllianceSeedsApi] [main] c.accutrak.toolbox.ToolboxApplication    : Starting ToolboxApplication using Java 19.0.2 with PID 20196 (C:\pHome\Projects\allianceSeeds\backend\AlianceSeeds-backend\target\classes started by Justin Smith in C:\pHome\Projects\allianceSeeds\backend\AlianceSeeds-backend)
+2024-12-15T10:35:00.597+02:00  INFO 20196 --- [AllianceSeedsApi] [main] c.accutrak.toolbox.ToolboxApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-12-15T10:35:02.338+02:00  INFO 20196 --- [AllianceSeedsApi] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-15T10:35:02.596+02:00  INFO 20196 --- [AllianceSeedsApi] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 247 ms. Found 11 JPA repository interfaces.
+2024-12-15T10:35:04.170+02:00  INFO 20196 --- [AllianceSeedsApi] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9091 (http)
+2024-12-15T10:35:04.188+02:00  INFO 20196 --- [AllianceSeedsApi] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-15T10:35:04.189+02:00  INFO 20196 --- [AllianceSeedsApi] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-12-15T10:35:04.353+02:00  INFO 20196 --- [AllianceSeedsApi] [main] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring embedded WebApplicationContext
+2024-12-15T10:35:04.354+02:00  INFO 20196 --- [AllianceSeedsApi] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3645 ms
+2024-12-15T10:35:04.935+02:00  INFO 20196 --- [AllianceSeedsApi] [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.22.3 by Redgate
+2024-12-15T10:35:04.935+02:00  INFO 20196 --- [AllianceSeedsApi] [main] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
+2024-12-15T10:35:04.936+02:00  INFO 20196 --- [AllianceSeedsApi] [main] o.f.c.internal.license.VersionPrinter    : 
+2024-12-15T10:35:04.962+02:00  WARN 20196 --- [AllianceSeedsApi] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08001
+Error Code : 0
+Message    : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+
+2024-12-15T10:35:04.969+02:00  INFO 20196 --- [AllianceSeedsApi] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-12-15T10:35:04.992+02:00  INFO 20196 --- [AllianceSeedsApi] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-12-15T10:35:05.026+02:00 ERROR 20196 --- [AllianceSeedsApi] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08001
+Error Code : 0
+Message    : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234) ~[spring-context-6.1.5.jar:6.1.5]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952) ~[spring-context-6.1.5.jar:6.1.5]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.5.jar:6.1.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.4.jar:3.2.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.4.jar:3.2.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.4.jar:3.2.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.4.jar:3.2.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.4.jar:3.2.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.4.jar:3.2.4]
+	at com.accutrak.toolbox.ToolboxApplication.main(ToolboxApplication.java:14) ~[classes/:na]
+Caused by: org.flywaydb.core.internal.exception.FlywaySqlException: Unable to obtain connection from database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08001
+Error Code : 0
+Message    : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:60) ~[flyway-core-9.22.3.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:74) ~[flyway-core-9.22.3.jar:na]
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:142) ~[flyway-core-9.22.3.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:140) ~[flyway-core-9.22.3.jar:na]
+	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:66) ~[spring-boot-autoconfigure-3.2.4.jar:3.2.4]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-6.1.5.jar:6.1.5]
+	... 18 common frames omitted
+Caused by: org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:342) ~[postgresql-42.6.2.jar:42.6.2]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54) ~[postgresql-42.6.2.jar:42.6.2]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263) ~[postgresql-42.6.2.jar:42.6.2]
+	at org.postgresql.Driver.makeConnection(Driver.java:443) ~[postgresql-42.6.2.jar:42.6.2]
+	at org.postgresql.Driver.connect(Driver.java:297) ~[postgresql-42.6.2.jar:42.6.2]
+	at org.springframework.jdbc.datasource.SimpleDriverDataSource.getConnectionFromDriver(SimpleDriverDataSource.java:144) ~[spring-jdbc-6.1.5.jar:6.1.5]
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnectionFromDriver(AbstractDriverBasedDataSource.java:205) ~[spring-jdbc-6.1.5.jar:6.1.5]
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnection(AbstractDriverBasedDataSource.java:169) ~[spring-jdbc-6.1.5.jar:6.1.5]
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:48) ~[flyway-core-9.22.3.jar:na]
+	... 24 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:535) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:585) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:666) ~[na:na]
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:243) ~[postgresql-42.6.2.jar:42.6.2]
+	at org.postgresql.core.PGStream.<init>(PGStream.java:98) ~[postgresql-42.6.2.jar:42.6.2]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:132) ~[postgresql-42.6.2.jar:42.6.2]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258) ~[postgresql-42.6.2.jar:42.6.2]
+	... 32 common frames omitted
+
+2024-12-15T10:36:14.237+02:00  INFO 13316 --- [AllianceSeedsApi] [main] c.accutrak.toolbox.ToolboxApplication    : Starting ToolboxApplication using Java 19.0.2 with PID 13316 (C:\pHome\Projects\allianceSeeds\backend\AlianceSeeds-backend\target\classes started by Justin Smith in C:\pHome\Projects\allianceSeeds\backend\AlianceSeeds-backend)
+2024-12-15T10:36:14.244+02:00  INFO 13316 --- [AllianceSeedsApi] [main] c.accutrak.toolbox.ToolboxApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-12-15T10:36:16.008+02:00  INFO 13316 --- [AllianceSeedsApi] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-15T10:36:16.223+02:00  INFO 13316 --- [AllianceSeedsApi] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 206 ms. Found 11 JPA repository interfaces.
+2024-12-15T10:36:18.122+02:00  INFO 13316 --- [AllianceSeedsApi] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9091 (http)
+2024-12-15T10:36:18.143+02:00  INFO 13316 --- [AllianceSeedsApi] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-15T10:36:18.145+02:00  INFO 13316 --- [AllianceSeedsApi] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-12-15T10:36:18.248+02:00  INFO 13316 --- [AllianceSeedsApi] [main] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring embedded WebApplicationContext
+2024-12-15T10:36:18.249+02:00  INFO 13316 --- [AllianceSeedsApi] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3890 ms
+2024-12-15T10:36:18.735+02:00  INFO 13316 --- [AllianceSeedsApi] [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.22.3 by Redgate
+2024-12-15T10:36:18.735+02:00  INFO 13316 --- [AllianceSeedsApi] [main] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
+2024-12-15T10:36:18.735+02:00  INFO 13316 --- [AllianceSeedsApi] [main] o.f.c.internal.license.VersionPrinter    : 
+2024-12-15T10:36:18.759+02:00  WARN 13316 --- [AllianceSeedsApi] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08001
+Error Code : 0
+Message    : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+
+2024-12-15T10:36:18.765+02:00  INFO 13316 --- [AllianceSeedsApi] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-12-15T10:36:18.792+02:00  INFO 13316 --- [AllianceSeedsApi] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-12-15T10:36:18.837+02:00 ERROR 13316 --- [AllianceSeedsApi] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08001
+Error Code : 0
+Message    : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234) ~[spring-context-6.1.5.jar:6.1.5]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952) ~[spring-context-6.1.5.jar:6.1.5]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.5.jar:6.1.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.4.jar:3.2.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.4.jar:3.2.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.4.jar:3.2.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.4.jar:3.2.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.4.jar:3.2.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.4.jar:3.2.4]
+	at com.accutrak.toolbox.ToolboxApplication.main(ToolboxApplication.java:14) ~[classes/:na]
+Caused by: org.flywaydb.core.internal.exception.FlywaySqlException: Unable to obtain connection from database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08001
+Error Code : 0
+Message    : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:60) ~[flyway-core-9.22.3.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:74) ~[flyway-core-9.22.3.jar:na]
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:142) ~[flyway-core-9.22.3.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:140) ~[flyway-core-9.22.3.jar:na]
+	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:66) ~[spring-boot-autoconfigure-3.2.4.jar:3.2.4]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-6.1.5.jar:6.1.5]
+	... 18 common frames omitted
+Caused by: org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:342) ~[postgresql-42.6.2.jar:42.6.2]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54) ~[postgresql-42.6.2.jar:42.6.2]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263) ~[postgresql-42.6.2.jar:42.6.2]
+	at org.postgresql.Driver.makeConnection(Driver.java:443) ~[postgresql-42.6.2.jar:42.6.2]
+	at org.postgresql.Driver.connect(Driver.java:297) ~[postgresql-42.6.2.jar:42.6.2]
+	at org.springframework.jdbc.datasource.SimpleDriverDataSource.getConnectionFromDriver(SimpleDriverDataSource.java:144) ~[spring-jdbc-6.1.5.jar:6.1.5]
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnectionFromDriver(AbstractDriverBasedDataSource.java:205) ~[spring-jdbc-6.1.5.jar:6.1.5]
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnection(AbstractDriverBasedDataSource.java:169) ~[spring-jdbc-6.1.5.jar:6.1.5]
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:48) ~[flyway-core-9.22.3.jar:na]
+	... 24 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:535) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:585) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:666) ~[na:na]
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:243) ~[postgresql-42.6.2.jar:42.6.2]
+	at org.postgresql.core.PGStream.<init>(PGStream.java:98) ~[postgresql-42.6.2.jar:42.6.2]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:132) ~[postgresql-42.6.2.jar:42.6.2]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258) ~[postgresql-42.6.2.jar:42.6.2]
+	... 32 common frames omitted
+
+2024-12-15T10:38:53.459+02:00  INFO 19608 --- [AllianceSeedsApi] [main] c.accutrak.toolbox.ToolboxApplication    : Starting ToolboxApplication using Java 19.0.2 with PID 19608 (C:\pHome\Projects\allianceSeeds\backend\AlianceSeeds-backend\target\classes started by Justin Smith in C:\pHome\Projects\allianceSeeds\backend\AlianceSeeds-backend)
+2024-12-15T10:38:53.468+02:00  INFO 19608 --- [AllianceSeedsApi] [main] c.accutrak.toolbox.ToolboxApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-12-15T10:38:55.397+02:00  INFO 19608 --- [AllianceSeedsApi] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-15T10:38:55.672+02:00  INFO 19608 --- [AllianceSeedsApi] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 261 ms. Found 11 JPA repository interfaces.
+2024-12-15T10:38:57.540+02:00  INFO 19608 --- [AllianceSeedsApi] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9091 (http)
+2024-12-15T10:38:57.573+02:00  INFO 19608 --- [AllianceSeedsApi] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-15T10:38:57.574+02:00  INFO 19608 --- [AllianceSeedsApi] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-12-15T10:38:57.691+02:00  INFO 19608 --- [AllianceSeedsApi] [main] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring embedded WebApplicationContext
+2024-12-15T10:38:57.692+02:00  INFO 19608 --- [AllianceSeedsApi] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4116 ms
+2024-12-15T10:38:58.444+02:00  INFO 19608 --- [AllianceSeedsApi] [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.22.3 by Redgate
+2024-12-15T10:38:58.444+02:00  INFO 19608 --- [AllianceSeedsApi] [main] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
+2024-12-15T10:38:58.445+02:00  INFO 19608 --- [AllianceSeedsApi] [main] o.f.c.internal.license.VersionPrinter    : 
+2024-12-15T10:38:58.521+02:00  INFO 19608 --- [AllianceSeedsApi] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/allianceSeeds (PostgreSQL 14.13)
+2024-12-15T10:38:58.620+02:00  INFO 19608 --- [AllianceSeedsApi] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "public"."flyway_schema_history" does not exist yet
+2024-12-15T10:38:58.630+02:00  INFO 19608 --- [AllianceSeedsApi] [main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.042s)
+2024-12-15T10:38:58.683+02:00  INFO 19608 --- [AllianceSeedsApi] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "public"."flyway_schema_history" ...
+2024-12-15T10:38:58.845+02:00  INFO 19608 --- [AllianceSeedsApi] [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2024-12-15T10:38:58.866+02:00  INFO 19608 --- [AllianceSeedsApi] [main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "1 - baseline"
+2024-12-15T10:38:58.943+02:00  INFO 19608 --- [AllianceSeedsApi] [main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "public", now at version v1 (execution time 00:00.019s)
+2024-12-15T10:38:59.087+02:00  INFO 19608 --- [AllianceSeedsApi] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-15T10:38:59.156+02:00  INFO 19608 --- [AllianceSeedsApi] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@28989415
+2024-12-15T10:38:59.161+02:00  INFO 19608 --- [AllianceSeedsApi] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-15T10:38:59.283+02:00  INFO 19608 --- [AllianceSeedsApi] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-15T10:38:59.482+02:00  INFO 19608 --- [AllianceSeedsApi] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-12-15T10:38:59.582+02:00  INFO 19608 --- [AllianceSeedsApi] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-15T10:39:00.123+02:00  INFO 19608 --- [AllianceSeedsApi] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-15T10:39:01.607+02:00  INFO 19608 --- [AllianceSeedsApi] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-15T10:39:01.961+02:00  WARN 19608 --- [AllianceSeedsApi] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-12-15T10:39:01.962+02:00  WARN 19608 --- [AllianceSeedsApi] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "uk_1xc1iry6gqjrvh5cpajiq7l2f" of relation "user" does not exist, skipping
+2024-12-15T10:39:01.984+02:00  WARN 19608 --- [AllianceSeedsApi] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-12-15T10:39:01.985+02:00  WARN 19608 --- [AllianceSeedsApi] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "ukcr43d3twl4wufkkqq58ebi1ys" of relation "firmware" does not exist, skipping
+2024-12-15T10:39:02.007+02:00  WARN 19608 --- [AllianceSeedsApi] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-12-15T10:39:02.009+02:00  WARN 19608 --- [AllianceSeedsApi] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "ukd3h628u3n7qqeq7vpnx2aipgi" of relation "log" does not exist, skipping
+2024-12-15T10:39:02.030+02:00  WARN 19608 --- [AllianceSeedsApi] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-12-15T10:39:02.031+02:00  WARN 19608 --- [AllianceSeedsApi] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "uk_797xa9cm02gy49gqifkpvvc2b" of relation "log" does not exist, skipping
+2024-12-15T10:39:02.053+02:00  WARN 19608 --- [AllianceSeedsApi] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-12-15T10:39:02.053+02:00  WARN 19608 --- [AllianceSeedsApi] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "uk_qi5ybbvtm4bd5p2xlrdof3o7m" of relation "report_script" does not exist, skipping
+2024-12-15T10:39:02.077+02:00  WARN 19608 --- [AllianceSeedsApi] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-12-15T10:39:02.077+02:00  WARN 19608 --- [AllianceSeedsApi] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "uk_f9iil6uu8d9ohutpr2irlpvio" of relation "site" does not exist, skipping
+2024-12-15T10:39:02.097+02:00  WARN 19608 --- [AllianceSeedsApi] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-12-15T10:39:02.098+02:00  WARN 19608 --- [AllianceSeedsApi] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "uk_mnn7skq6y07pjm5me5ck2hnbi" of relation "software" does not exist, skipping
+2024-12-15T10:39:02.112+02:00  INFO 19608 --- [AllianceSeedsApi] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-15T10:39:03.465+02:00  WARN 19608 --- [AllianceSeedsApi] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-15T10:39:05.109+02:00  INFO 19608 --- [AllianceSeedsApi] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@16c6d5a2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7314f4cb, org.springframework.security.web.context.SecurityContextHolderFilter@2cf6b6e6, org.springframework.security.web.header.HeaderWriterFilter@6f78c132, org.springframework.web.filter.CorsFilter@8616368, org.springframework.security.web.authentication.logout.LogoutFilter@7e38d2a2, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@5eb4b746, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1444e35f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3f563397, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@c4fc610, org.springframework.security.web.session.SessionManagementFilter@367e0b0e, org.springframework.security.web.access.ExceptionTranslationFilter@5a503cf0, org.springframework.security.web.access.intercept.AuthorizationFilter@c53dfb2]
+2024-12-15T10:39:05.762+02:00  INFO 19608 --- [AllianceSeedsApi] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9091 (http) with context path '/api/v1'
+2024-12-15T10:39:05.778+02:00  INFO 19608 --- [AllianceSeedsApi] [main] c.accutrak.toolbox.ToolboxApplication    : Started ToolboxApplication in 13.36 seconds (process running for 14.174)
+2024-12-15T10:39:12.364+02:00  INFO 19608 --- [AllianceSeedsApi] [http-nio-9091-exec-3] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-15T10:39:12.365+02:00  INFO 19608 --- [AllianceSeedsApi] [http-nio-9091-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-15T10:39:12.367+02:00  INFO 19608 --- [AllianceSeedsApi] [http-nio-9091-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-12-15T10:43:43.856+02:00  INFO 19608 --- [AllianceSeedsApi] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-15T10:43:43.863+02:00  INFO 19608 --- [AllianceSeedsApi] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-15T10:43:43.875+02:00  INFO 19608 --- [AllianceSeedsApi] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-15T11:23:17.293+02:00  INFO 20660 --- [AllianceSeedsApi] [main] c.accutrak.toolbox.ToolboxApplication    : Starting ToolboxApplication using Java 19.0.2 with PID 20660 (C:\pHome\Projects\allianceSeeds\backend\AlianceSeeds-backend\target\classes started by Justin Smith in C:\pHome\Projects\allianceSeeds\backend\AlianceSeeds-backend)
+2024-12-15T11:23:17.299+02:00  INFO 20660 --- [AllianceSeedsApi] [main] c.accutrak.toolbox.ToolboxApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-12-15T11:23:18.820+02:00  INFO 20660 --- [AllianceSeedsApi] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-15T11:23:18.980+02:00  INFO 20660 --- [AllianceSeedsApi] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 153 ms. Found 11 JPA repository interfaces.
+2024-12-15T11:23:20.997+02:00  INFO 20660 --- [AllianceSeedsApi] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9091 (http)
+2024-12-15T11:23:21.031+02:00  INFO 20660 --- [AllianceSeedsApi] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-15T11:23:21.032+02:00  INFO 20660 --- [AllianceSeedsApi] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-12-15T11:23:21.191+02:00  INFO 20660 --- [AllianceSeedsApi] [main] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring embedded WebApplicationContext
+2024-12-15T11:23:21.192+02:00  INFO 20660 --- [AllianceSeedsApi] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3811 ms
+2024-12-15T11:23:22.134+02:00  INFO 20660 --- [AllianceSeedsApi] [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.22.3 by Redgate
+2024-12-15T11:23:22.135+02:00  INFO 20660 --- [AllianceSeedsApi] [main] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
+2024-12-15T11:23:22.135+02:00  INFO 20660 --- [AllianceSeedsApi] [main] o.f.c.internal.license.VersionPrinter    : 
+2024-12-15T11:23:22.210+02:00  INFO 20660 --- [AllianceSeedsApi] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/allianceSeeds (PostgreSQL 14.13)
+2024-12-15T11:23:22.388+02:00  INFO 20660 --- [AllianceSeedsApi] [main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.095s)
+2024-12-15T11:23:22.476+02:00  INFO 20660 --- [AllianceSeedsApi] [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 1
+2024-12-15T11:23:22.483+02:00  INFO 20660 --- [AllianceSeedsApi] [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2024-12-15T11:23:22.684+02:00  INFO 20660 --- [AllianceSeedsApi] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-15T11:23:22.775+02:00  INFO 20660 --- [AllianceSeedsApi] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4e974b9e
+2024-12-15T11:23:22.781+02:00  INFO 20660 --- [AllianceSeedsApi] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-15T11:23:22.941+02:00  INFO 20660 --- [AllianceSeedsApi] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-15T11:23:23.069+02:00  INFO 20660 --- [AllianceSeedsApi] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-12-15T11:23:23.113+02:00  INFO 20660 --- [AllianceSeedsApi] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-15T11:23:23.453+02:00  INFO 20660 --- [AllianceSeedsApi] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-15T11:23:24.683+02:00  INFO 20660 --- [AllianceSeedsApi] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-15T11:23:24.785+02:00  INFO 20660 --- [AllianceSeedsApi] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-15T11:23:26.509+02:00  WARN 20660 --- [AllianceSeedsApi] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-15T11:23:28.681+02:00  INFO 20660 --- [AllianceSeedsApi] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@77eb76f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@be56353, org.springframework.security.web.context.SecurityContextHolderFilter@5d28e108, org.springframework.security.web.header.HeaderWriterFilter@5c2f5dc, org.springframework.web.filter.CorsFilter@5c815478, org.springframework.security.web.authentication.logout.LogoutFilter@509bf2d5, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@3b9d85c2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4587675c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@31e3b882, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1efa258e, org.springframework.security.web.session.SessionManagementFilter@413a2520, org.springframework.security.web.access.ExceptionTranslationFilter@2c10f9f3, org.springframework.security.web.access.intercept.AuthorizationFilter@560e1459]
+2024-12-15T11:23:29.903+02:00  INFO 20660 --- [AllianceSeedsApi] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9091 (http) with context path '/api/v1'
+2024-12-15T11:23:29.929+02:00  INFO 20660 --- [AllianceSeedsApi] [main] c.accutrak.toolbox.ToolboxApplication    : Started ToolboxApplication in 13.451 seconds (process running for 14.006)
+2024-12-15T11:23:41.264+02:00  INFO 20660 --- [AllianceSeedsApi] [http-nio-9091-exec-1] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-15T11:23:41.265+02:00  INFO 20660 --- [AllianceSeedsApi] [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-15T11:23:41.269+02:00  INFO 20660 --- [AllianceSeedsApi] [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2024-12-15T13:04:43.066+02:00  INFO 20660 --- [AllianceSeedsApi] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-15T13:04:43.074+02:00  INFO 20660 --- [AllianceSeedsApi] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-15T13:04:43.082+02:00  INFO 20660 --- [AllianceSeedsApi] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-15T15:02:20.635+02:00  INFO 28560 --- [AllianceSeedsApi] [main] c.accutrak.toolbox.ToolboxApplication    : Starting ToolboxApplication using Java 19.0.2 with PID 28560 (C:\pHome\Projects\allianceSeeds\AllianceSeeds-backend\target\classes started by Justin Smith in C:\pHome\Projects\allianceSeeds\AllianceSeeds-backend)
+2024-12-15T15:02:20.643+02:00  INFO 28560 --- [AllianceSeedsApi] [main] c.accutrak.toolbox.ToolboxApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-12-15T15:02:22.968+02:00  INFO 28560 --- [AllianceSeedsApi] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-15T15:02:23.119+02:00  INFO 28560 --- [AllianceSeedsApi] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 144 ms. Found 11 JPA repository interfaces.
+2024-12-15T15:02:24.673+02:00  INFO 28560 --- [AllianceSeedsApi] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9091 (http)
+2024-12-15T15:02:24.694+02:00  INFO 28560 --- [AllianceSeedsApi] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-15T15:02:24.695+02:00  INFO 28560 --- [AllianceSeedsApi] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-12-15T15:02:24.811+02:00  INFO 28560 --- [AllianceSeedsApi] [main] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring embedded WebApplicationContext
+2024-12-15T15:02:24.812+02:00  INFO 28560 --- [AllianceSeedsApi] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4005 ms
+2024-12-15T15:02:25.483+02:00  INFO 28560 --- [AllianceSeedsApi] [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.22.3 by Redgate
+2024-12-15T15:02:25.483+02:00  INFO 28560 --- [AllianceSeedsApi] [main] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
+2024-12-15T15:02:25.483+02:00  INFO 28560 --- [AllianceSeedsApi] [main] o.f.c.internal.license.VersionPrinter    : 
+2024-12-15T15:02:25.530+02:00  INFO 28560 --- [AllianceSeedsApi] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/allianceSeeds (PostgreSQL 14.13)
+2024-12-15T15:02:25.677+02:00  INFO 28560 --- [AllianceSeedsApi] [main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.089s)
+2024-12-15T15:02:25.765+02:00  INFO 28560 --- [AllianceSeedsApi] [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 1
+2024-12-15T15:02:25.798+02:00  INFO 28560 --- [AllianceSeedsApi] [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2024-12-15T15:02:26.070+02:00  INFO 28560 --- [AllianceSeedsApi] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-15T15:02:26.159+02:00  INFO 28560 --- [AllianceSeedsApi] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@38087342
+2024-12-15T15:02:26.164+02:00  INFO 28560 --- [AllianceSeedsApi] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-15T15:02:26.335+02:00  INFO 28560 --- [AllianceSeedsApi] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-15T15:02:26.472+02:00  INFO 28560 --- [AllianceSeedsApi] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-12-15T15:02:26.596+02:00  INFO 28560 --- [AllianceSeedsApi] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-15T15:02:27.441+02:00  INFO 28560 --- [AllianceSeedsApi] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-15T15:02:29.116+02:00  INFO 28560 --- [AllianceSeedsApi] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-15T15:02:29.195+02:00  INFO 28560 --- [AllianceSeedsApi] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-15T15:02:30.342+02:00  WARN 28560 --- [AllianceSeedsApi] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-15T15:02:31.654+02:00  INFO 28560 --- [AllianceSeedsApi] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2b26d289, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7f680a9a, org.springframework.security.web.context.SecurityContextHolderFilter@3b09582d, org.springframework.security.web.header.HeaderWriterFilter@7a8dbbf1, org.springframework.web.filter.CorsFilter@3a33d655, org.springframework.security.web.authentication.logout.LogoutFilter@1df8ea34, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@4c3125ff, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4f8488ef, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@27a8bfa1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@526a1b51, org.springframework.security.web.session.SessionManagementFilter@5c2f5dc, org.springframework.security.web.access.ExceptionTranslationFilter@6dccdc50, org.springframework.security.web.access.intercept.AuthorizationFilter@509bf2d5]
+2024-12-15T15:02:32.823+02:00  INFO 28560 --- [AllianceSeedsApi] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9091 (http) with context path '/api/v1'
+2024-12-15T15:02:32.852+02:00  INFO 28560 --- [AllianceSeedsApi] [main] c.accutrak.toolbox.ToolboxApplication    : Started ToolboxApplication in 13.715 seconds (process running for 14.762)
+2024-12-15T15:03:08.093+02:00  INFO 28560 --- [AllianceSeedsApi] [http-nio-9091-exec-2] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-15T15:03:08.094+02:00  INFO 28560 --- [AllianceSeedsApi] [http-nio-9091-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-15T15:03:08.099+02:00  INFO 28560 --- [AllianceSeedsApi] [http-nio-9091-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms

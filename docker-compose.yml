@@ -1,0 +1,66 @@
+version: '3.5'
+
+networks:
+  codesmith-network:
+    name: codesmith
+
+volumes:
+    allianceSeeds_postgres_data:
+    codesmith-pgadmin-data:
+    
+services:
+
+#  toolbox-api:
+#    container_name: toolbox-api
+#    hostname: toolbox-api
+#    image: toolbox-api:1.1.1-rc11
+#    restart: unless-stopped
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#      args:
+#        version: 1.1.1-rc11
+#    networks:
+#      - accutrak-network
+#    ports:
+#      - "9090:9090"
+#    env_file:
+#      - .env.docker
+#    volumes:
+#      - ./service_logs:/accutrak/toolbox/logs
+#    depends_on:
+#      - toolbox-db
+
+  allianceSeeds-db:
+    container_name: allianceSeeds-db
+    hostname: allianceSeeds-db
+    image: postgres:14-alpine
+    restart: unless-stopped
+    networks:
+      - codesmith-network
+    ports:
+      - "5432:5432"
+    volumes:
+      - allianceSeeds_postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=T00l8ox4
+      - POSTGRES_USER=allianceSeeds_admin #postgres
+      - POSTGRES_DB=allianceSeeds
+
+  pgadmin:
+    container_name: codesmith-pgadmin
+    hostname: pgadmin
+    image: dpage/pgadmin4
+    restart: always
+    networks:
+      - codesmith-network
+    ports:
+      - "8889:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: justinpmsmith@outlook.com
+      PGADMIN_DEFAULT_PASSWORD: justin.smith
+    volumes:
+      - codesmith-pgadmin-data:/var/lib/pgadmin
+
+
+
