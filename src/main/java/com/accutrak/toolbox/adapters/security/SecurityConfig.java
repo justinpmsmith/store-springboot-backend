@@ -27,6 +27,7 @@ public class SecurityConfig {
                 // Allow all GET and POST requests to /api/v1/client/** without authentication
                 .requestMatchers(HttpMethod.POST, "/client/**").permitAll()
                 .requestMatchers(HttpMethod.GET, "/client/**").permitAll()
+                .requestMatchers(HttpMethod.DELETE, "/client/**").permitAll()
                 .requestMatchers(HttpMethod.GET, "/admin/**").hasRole(ADMIN)
                 .requestMatchers(HttpMethod.POST, "/admin/**").hasRole(ADMIN)
                 // Ensure other requests are authenticated

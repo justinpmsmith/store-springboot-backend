@@ -1,19 +1,13 @@
 package com.accutrak.toolbox.domain.validation;
 
-import com.accutrak.toolbox.domain.entities.Device;
-import com.accutrak.toolbox.domain.entities.User;
-import com.accutrak.toolbox.domain.exceptions.InvalidDeviceIdException;
 import com.accutrak.toolbox.domain.exceptions.InvalidEmailException;
 import com.accutrak.toolbox.domain.exceptions.InvalidHexException;
-import com.accutrak.toolbox.domain.exceptions.InvalidLengthException;
 
 import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.List;
 
 public class Validation {
-
-
 
     public static void validateHex(String inputString) {
         try {
@@ -35,41 +29,6 @@ public class Validation {
             throw new InvalidEmailException();
         }
     }
-
-    public static void validateDeviceId(String deviceId){
-        if(!(deviceId.length() > 0 && deviceId.length() <=255)){
-            System.out.println("Invalid DeviceId");
-
-            throw new InvalidDeviceIdException();
-        }
-    }
-
-    public static void validateDevice(Device device){
-        validateDeviceId(device.getId());
-        if (device.getId().length() > 255){
-            throw new InvalidLengthException();
-        }
-        if (device.getAppVersion().length() > 255){
-            throw new InvalidLengthException();
-        }
-        if (device.getInfo().length() > 1000){
-            throw new InvalidLengthException();
-        }
-    }
-
-    public static void validateUser(User user){
-        validateDeviceId(user.getDeviceId());
-        validateEmail(user.getEmail());
-
-        if(user.getName().length() < 2 || user.getName().length()> 100){
-            throw new InvalidLengthException();
-        }
-        if(user.getSurname().length() < 2 || user.getSurname().length()> 100){
-            throw new InvalidLengthException();
-        }
-
-    }
-
     private static boolean isEmailValid(String input) {
         // Return false if the input is null or empty
         if (input == null || input.isEmpty()) {

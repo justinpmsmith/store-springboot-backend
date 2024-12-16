@@ -9,18 +9,15 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "\"User\"")
-public class User {
-
+@Table(name = "category")
+public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    public Long id;
 
-    @Column(name = "name", unique = true)
-    private String name;
+    @Column(name = "name")
+    public String name;
 
-    @Column(name = "password")
-    private String password; // password hash
-
-
+    @Column(name = "photo", columnDefinition = "text")
+    public String photo; // base64 string
 }

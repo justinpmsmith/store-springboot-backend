@@ -1,6 +1,6 @@
 package com.accutrak.toolbox.services.notifications;
 
-import com.accutrak.toolbox.adapters.repositories.notifications.EmailAdapter;
+import com.accutrak.toolbox.adapters.notifications.EmailAdapter;
 import com.accutrak.toolbox.domain.commands.Command;
 import com.accutrak.toolbox.domain.commands.notifications.SendEmailCommand;
 import com.accutrak.toolbox.services.Transformer;
