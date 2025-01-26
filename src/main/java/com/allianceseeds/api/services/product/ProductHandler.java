@@ -68,7 +68,22 @@ public class ProductHandler {
 
     }
 
+    public Transformer getProductByProdCode(Command command){
+        String prodCode = ((GetProductByProdCodeCommand) command).getProdCode();
+        List<Product> prodList = productRepo.getProductsByStringField("prodCode", prodCode);
+
+        if(!prodList.isEmpty()){
+            Product product = prodList.get(0);
+            return new ProductTransformer<>(true, product);
+
+        }
+        return new ProductTransformer<>(true, null);
+
+    }
+
+
     public Transformer getProductsByCategory(Command command){
+        // TODO: handle out of stock products
         String category = ((GetProductsByCategoryCommand) command).getCategory();
         List<Product> prodList= productRepo.getProductsByStringField("category", category);
 
@@ -84,7 +99,6 @@ public class ProductHandler {
 
     public Transformer deleteProductsByCategory(Command command){
         String category = ((DeleteProductsByCategoryCommand) command).getCategory();
-
         List<Product> products = productRepo.getProductsByStringField("category", category);
 
         if(products.size() > 0){

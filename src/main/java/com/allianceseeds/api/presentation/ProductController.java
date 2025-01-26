@@ -18,7 +18,7 @@ public class ProductController {
     }
 
     @PostMapping("/client/addProduct")
-    public Transformer addLog(@RequestBody Product product){
+    public Transformer addProduct(@RequestBody Product product){
         return productResource.addProduct(product);
 
     }
@@ -38,6 +38,11 @@ public class ProductController {
         return productResource.updateProduct(product);
     }
 
+    @GetMapping("/client/getProductByProdCode")
+    public Transformer getProductByProdCode(@RequestParam String prodCode){
+
+        return productResource.getProductByProdCode(prodCode);
+    }
     @GetMapping("/client/getProductsByCategory")
     public Transformer getProductsByCategory(@RequestParam String category){
 

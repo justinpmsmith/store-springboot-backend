@@ -27,6 +27,11 @@ public class ProductResource extends BaseResource{
         return messageBus.publishCommand(command);
     }
 
+    public Transformer getProductByProdCode(String prodCode){
+        GetProductByProdCodeCommand command = new GetProductByProdCodeCommand(prodCode);
+        return messageBus.publishCommand(command);
+    }
+
     public Transformer getProductsByCategory(String category){
         GetProductsByCategoryCommand command = new GetProductsByCategoryCommand(category);
         return messageBus.publishCommand(command);

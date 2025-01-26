@@ -55,6 +55,8 @@ public class Handlers {
         commandHandlers.put(GetAllProductsCommand.class, this.productHandler::getAllProducts);
         commandHandlers.put(GetProductsByCategoryCommand.class, this.productHandler::getProductsByCategory);
         commandHandlers.put(UpdateProductCommand.class, this.productHandler::updateProduct);
+        commandHandlers.put(GetProductByProdCodeCommand.class, this.productHandler::getProductByProdCode);
+
 
 
         // Category
@@ -63,6 +65,8 @@ public class Handlers {
         commandHandlers.put(GetAllCategoriesCommand.class, this.categoryHandler::getAllCategories);
         commandHandlers.put(GetCategoryNamesCommand.class, this.categoryHandler::getCategoryNames);
         commandHandlers.put(GetCategoryByNameCommand.class, this.categoryHandler::getCategoryByName);
+        commandHandlers.put(UpdateCategoryCommand.class, this.categoryHandler::updateCategory);
+
 
         // User
         commandHandlers.put(AddUserCommand.class, this.userHandler::addUser);

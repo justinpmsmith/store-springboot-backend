@@ -37,15 +37,15 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: ${KEYCLOACK_ISSUER_URI:https://node.accutrak.co.za/auth/realms/accutrak}  #iss
-          jwk-set-uri: ${KEYCLOACK_JWK_SET_URI:https://node.accutrak.co.za/auth/realms/accutrak/protocol/openid-connect/certs}
+          issuer-uri: ${KEYCLOACK_ISSUER_URI:https://node.accutrak.co.za/auth/realms/codesmith}  #iss
+          jwk-set-uri: ${KEYCLOACK_JWK_SET_URI:https://node.accutrak.co.za/auth/realms/codesmith/protocol/openid-connect/certs}
 #          issuer-uri: https://node.accutrak.co.za/auth/realms/accutrak  #
 #          jwk-set-uri: https://node.accutrak.co.za/auth/realms/accutrak/protocol/openid-connect/certs
 
 jwt:
   auth:
     converter:
-      resource-id: toolbox
+      resource-id: allianceseeds
       principal-attribute: principal_username
 
 logging:

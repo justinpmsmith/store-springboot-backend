@@ -18,6 +18,10 @@ public class CategoryResource extends BaseResource {
         AddCategoryCommand command = new AddCategoryCommand(category);
         return messageBus.publishCommand(command);
     }
+    public Transformer updateCategory(Category category) {
+        UpdateCategoryCommand command = new UpdateCategoryCommand(category);
+        return messageBus.publishCommand(command);
+    }
 
     public Transformer deleteCategoryByName(String name) {
         DeleteCategoryByNameCommand command = new DeleteCategoryByNameCommand(name);

@@ -7,6 +7,6 @@ public class GetProductsByCategoryCommand implements ProductCommand{
     private String Category;
 
     public GetProductsByCategoryCommand(String category) {
-        Category = category;
+        Category = category.toUpperCase();
     }
 }

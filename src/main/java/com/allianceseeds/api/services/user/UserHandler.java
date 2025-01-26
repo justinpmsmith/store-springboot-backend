@@ -59,9 +59,6 @@ public class UserHandler {
         String name = ((AuthenticateUserCommand) command).getName();
         String passwordHash = ((AuthenticateUserCommand) command).getPasswordHash();
 
-        System.out.println("provided username: " + name);
-        System.out.println("provided password: " + passwordHash);
-
         List<User> users = userRepo.getUserByStringField("name", name);
 
         if (users.isEmpty() || !users.get(0).getPassword().equals(passwordHash)) {

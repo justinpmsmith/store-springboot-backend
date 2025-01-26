@@ -6,6 +6,6 @@ public class GetCategoryByNameCommand implements CategoryCommand {
     private String name;
 
     public GetCategoryByNameCommand(String name) {
-        this.name = name;
+        this.name = name.toUpperCase();
     }
 }

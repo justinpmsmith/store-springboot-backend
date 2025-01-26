@@ -6,14 +6,12 @@ import com.allianceseeds.api.domain.commands.Command;
 import com.allianceseeds.api.domain.commands.category.AddCategoryCommand;
 import com.allianceseeds.api.domain.commands.category.DeleteCategoryByNameCommand;
 import com.allianceseeds.api.domain.commands.category.GetCategoryByNameCommand;
-import com.allianceseeds.api.domain.commands.product.DeleteProductByProdCodeCommand;
-import com.allianceseeds.api.domain.commands.product.DeleteProductsByCategoryCommand;
+import com.allianceseeds.api.domain.commands.category.UpdateCategoryCommand;
 import com.allianceseeds.api.domain.entities.Category;
 import com.allianceseeds.api.domain.entities.Product;
 import com.allianceseeds.api.services.Transformer;
 import com.allianceseeds.api.services.UnitOfWork;
 import com.allianceseeds.api.services.UnitOfWorkInt;
-import com.allianceseeds.api.services.product.ProductTransformer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -51,13 +49,38 @@ public class CategoryHandler {
         return new CategoryTransformer<>(true, null);
     }
 
+
+
+    public Transformer updateCategory(Command command) {
+        Category category = ((UpdateCategoryCommand) command).getCategory();
+
+        List<Category> categoryList = categoryRepo.getCategoriesByStringField("name", category.getName());
+
+        if (!categoryList.isEmpty()) {
+            Long id = categoryList.get(0).getId();
+            category.setId(id);
+            categoryUOW.registerRepoOperation(category, UnitOfWorkInt.UnitActions.INSERT);
+            categoryUOW.commit();
+        }
+
+        return new CategoryTransformer<>(true, null);
+    }
+
     public Transformer deleteCategoryByName(Command command) {
         String name = ((DeleteCategoryByNameCommand) command).getName();
         List<Category> categoryList = categoryRepo.getCategoriesByStringField("name", name);
+        System.out.println("in delete category handler");
+
 
         if (!categoryList.isEmpty()) {
+            System.out.println("deleting " + name);
+
             categoryUOW.registerRepoOperation(categoryList.get(0), UnitOfWorkInt.UnitActions.DELETE);
+            System.out.println("1");
+
             categoryUOW.commit();
+            System.out.println("2");
+
             deleteProductsByCategory(name);
         }
         return new CategoryTransformer<>(true, null);
@@ -74,7 +97,6 @@ public class CategoryHandler {
 
         if(!categories.isEmpty()){
             return new CategoryTransformer<>(true, categories.get(0));
-
         }
         return new CategoryTransformer<>(false, null);
     }

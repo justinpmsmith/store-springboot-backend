@@ -22,6 +22,11 @@ public class CategoryController {
         return categoryResource.addCategory(category);
     }
 
+    @PostMapping("/client/updateCategory")
+    public Transformer updateCategory(@RequestBody Category category) {
+        return categoryResource.updateCategory(category);
+    }
+
     @DeleteMapping("/client/deleteCategoryByName")
     public Transformer deleteCategoryByName(@RequestParam String name) {
         return categoryResource.deleteCategoryByName(name);
