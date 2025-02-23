@@ -17,21 +17,21 @@ public class EmailAdapter {
     }
 
     @Async
-    public Boolean sendEmail(String to, String subject, String body){
+    public Boolean sendEmail(String[] to, String subject, String body){
         try {
             SimpleMailMessage message = new SimpleMailMessage();
 
-            message.setTo(to);
-            message.setFrom("statedgebetting@gmail.com");
+            message.setTo(to);  // accepts an array of email addresses
             message.setSubject(subject);
             message.setText(body);
+
+            System.out.println(to[0]);
 
             mailSender.send(message);
             return true;
         } catch (Exception e){
             return false;
         }
-
     }
 
 }

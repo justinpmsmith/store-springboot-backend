@@ -2,12 +2,14 @@ package com.allianceseeds.api.services;
 
 import com.allianceseeds.api.domain.commands.Command;
 import com.allianceseeds.api.domain.commands.category.*;
+import com.allianceseeds.api.domain.commands.customer.ContactUsCommand;
 import com.allianceseeds.api.domain.commands.notifications.SendEmailCommand;
 import com.allianceseeds.api.domain.commands.product.*;
 import com.allianceseeds.api.domain.commands.user.AddUserCommand;
 import com.allianceseeds.api.domain.commands.user.AuthenticateUserCommand;
 import com.allianceseeds.api.domain.commands.user.DeleteUserByNameCommand;
 import com.allianceseeds.api.services.category.CategoryHandler;
+import com.allianceseeds.api.services.customer.CustomerHandler;
 import com.allianceseeds.api.services.notifications.NotificationHandler;
 import com.allianceseeds.api.services.product.ProductHandler;
 import com.allianceseeds.api.services.user.UserHandler;
@@ -31,14 +33,17 @@ public class Handlers {
 
     private final UserHandler userHandler;
 
+    private final CustomerHandler customerHandler;
+
 
     @Autowired
-    public Handlers(NotificationHandler notificationHandler, ProductHandler productHandler, CategoryHandler categoryHandler, UserHandler userHandler) {
+    public Handlers(NotificationHandler notificationHandler, ProductHandler productHandler, CategoryHandler categoryHandler, UserHandler userHandler, CustomerHandler customerHandler) {
 
         this.notificationHandler = notificationHandler;
         this.productHandler = productHandler;
         this.categoryHandler = categoryHandler;
         this.userHandler = userHandler;
+        this.customerHandler = customerHandler;
 
 
         commandHandlers = new HashMap<>();
@@ -74,6 +79,8 @@ public class Handlers {
         commandHandlers.put(AuthenticateUserCommand.class, this.userHandler::authenticate);
 
 
+        // Customer
+        commandHandlers.put(ContactUsCommand.class, this.customerHandler::contactUs);
 
 
 

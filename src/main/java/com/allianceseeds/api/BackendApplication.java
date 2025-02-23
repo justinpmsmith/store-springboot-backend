@@ -7,11 +7,11 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-public class ToolboxApplication {
+public class BackendApplication {
 
 	public static void main(String[] args) {
 		// Capture the ApplicationContext
-		ApplicationContext context = SpringApplication.run(ToolboxApplication.class, args);
+		ApplicationContext context = SpringApplication.run(BackendApplication.class, args);
 
 		// Start the UOW consumer thread
 //		UOWConsumer consumer = context.getBean(UOWConsumer.class);

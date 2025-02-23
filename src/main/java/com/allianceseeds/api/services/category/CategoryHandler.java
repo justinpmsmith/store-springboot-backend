@@ -69,17 +69,13 @@ public class CategoryHandler {
     public Transformer deleteCategoryByName(Command command) {
         String name = ((DeleteCategoryByNameCommand) command).getName();
         List<Category> categoryList = categoryRepo.getCategoriesByStringField("name", name);
-        System.out.println("in delete category handler");
 
 
         if (!categoryList.isEmpty()) {
-            System.out.println("deleting " + name);
 
             categoryUOW.registerRepoOperation(categoryList.get(0), UnitOfWorkInt.UnitActions.DELETE);
-            System.out.println("1");
 
             categoryUOW.commit();
-            System.out.println("2");
 
             deleteProductsByCategory(name);
         }

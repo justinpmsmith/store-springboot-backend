@@ -25,10 +25,10 @@ spring:
 
 
   mail:
-    host: smtp.gmail.com
+    host: ${EMAIL_HOST_SERVER:smtp.sportvest.co.za}
     port: 587
-    username: noreply@accutrak.co.za
-    password: '@ccut0821'
+    username: ${EMAIL_HOST_USER:cnel@sportvest.co.za}
+    password: ${EMAIL_HOST_PASSWORD:efq4Fk@a$8x8hd}
     properties.mail.smtp:
       auth: true
       starttls.enable: true
@@ -37,8 +37,8 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: ${KEYCLOACK_ISSUER_URI:https://node.accutrak.co.za/auth/realms/codesmith}  #iss
-          jwk-set-uri: ${KEYCLOACK_JWK_SET_URI:https://node.accutrak.co.za/auth/realms/codesmith/protocol/openid-connect/certs}
+          issuer-uri: ${KEYCLOACK_ISSUER_URI:https://keycloack.code-smith.co.za/auth/realms/codesmith}  #iss
+          jwk-set-uri: ${KEYCLOACK_JWK_SET_URI:https://keycloack.code-smith.co.za/auth/realms/codesmith/protocol/openid-connect/certs}
 #          issuer-uri: https://node.accutrak.co.za/auth/realms/accutrak  #
 #          jwk-set-uri: https://node.accutrak.co.za/auth/realms/accutrak/protocol/openid-connect/certs
 
@@ -46,7 +46,7 @@ jwt:
   auth:
     converter:
       resource-id: allianceseeds
-      principal-attribute: principal_username
+      principal-attribute: preferred_username  # Changed from principal_username
 
 logging:
   level:
@@ -73,6 +73,10 @@ server:
     multipart:
       max-file-size: 20MB
       max-request-size: 20MB
+
+
+env:
+  keycloakSecret: ${KEYCLOAK_SECRET:3ce609d6-2acf-4fc6-8285-029395ed41b4}
 
 
 

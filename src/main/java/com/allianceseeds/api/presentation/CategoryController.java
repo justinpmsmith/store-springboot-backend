@@ -17,17 +17,17 @@ public class CategoryController {
         this.categoryResource = categoryResource;
     }
 
-    @PostMapping("/client/addCategory")
+    @PostMapping("/admin/addCategory")
     public Transformer addCategory(@RequestBody Category category) {
         return categoryResource.addCategory(category);
     }
 
-    @PostMapping("/client/updateCategory")
+    @PostMapping("/admin/updateCategory")
     public Transformer updateCategory(@RequestBody Category category) {
         return categoryResource.updateCategory(category);
     }
 
-    @DeleteMapping("/client/deleteCategoryByName")
+    @DeleteMapping("/admin/deleteCategoryByName")
     public Transformer deleteCategoryByName(@RequestParam String name) {
         return categoryResource.deleteCategoryByName(name);
     }

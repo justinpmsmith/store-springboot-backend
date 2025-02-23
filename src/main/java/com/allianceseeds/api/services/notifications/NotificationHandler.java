@@ -17,7 +17,7 @@ public class NotificationHandler {
     }
 
     public Transformer sendEmail(Command command){
-        String to = ((SendEmailCommand) command).getTo();
+        String[] to = ((SendEmailCommand) command).getTo();
         String subject = ((SendEmailCommand) command).getSubject();
         String body = ((SendEmailCommand) command).getBody();
 

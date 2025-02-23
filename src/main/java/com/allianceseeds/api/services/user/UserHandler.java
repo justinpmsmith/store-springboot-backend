@@ -10,6 +10,7 @@ import com.allianceseeds.api.services.Transformer;
 import com.allianceseeds.api.services.UnitOfWork;
 import com.allianceseeds.api.services.UnitOfWorkInt;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,6 +20,9 @@ public class UserHandler {
 
     private final UserRepo userRepo;
     private final UnitOfWork<User> userUOW;
+
+    @Value("${env.keycloakSecret}")
+    private String keycloakSecret;
 
     @Autowired
     public UserHandler(UserRepo userRepo) {
@@ -66,7 +70,7 @@ public class UserHandler {
         }
 
         // Perform HTTP request to retrieve access token (use dummy token until access token retrieval in place)
-        String accessToken = "dummyToken";
-        return new UserTransformer<>(true, accessToken);
+//        String keycloakSecret1 = "3ce609d6-2acf-4fc6-8285-029395ed41b4";
+        return new UserTransformer<>(true, keycloakSecret);
     }
 }

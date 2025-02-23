@@ -17,23 +17,23 @@ public class ProductController {
         this.productResource = productResource;
     }
 
-    @PostMapping("/client/addProduct")
+    @PostMapping("/admin/addProduct")
     public Transformer addProduct(@RequestBody Product product){
         return productResource.addProduct(product);
 
     }
 
-    @DeleteMapping("/client/deleteProductByProdCode")
+    @DeleteMapping("/admin/deleteProductByProdCode")
     public Transformer deleteProductByProdCode(@RequestParam String prodCode){
         return productResource.deleteProductByProdCode(prodCode);
     }
 
-    @DeleteMapping("/client/deleteProductsByCategory")
+    @DeleteMapping("/admin/deleteProductsByCategory")
     public Transformer deleteProductsByCategory(@RequestParam String category){
         return productResource.deleteProductByCategory(category);
     }
 
-    @PostMapping("/client/updateProduct")
+    @PostMapping("/admin/updateProduct")
     public Transformer updateProduct(@RequestBody Product product){
         return productResource.updateProduct(product);
     }

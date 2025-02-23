@@ -18,12 +18,12 @@ public class UserController {
         this.userResource = userResource;
     }
 
-    @PostMapping("/client/addUser")
+    @PostMapping("/admin/addUser")
     public Transformer addUser(@RequestBody User user) {
         return userResource.addUser(user);
     }
 
-    @DeleteMapping("/client/deleteUserByName")
+    @DeleteMapping("/admin/deleteUserByName")
     public Transformer deleteUserByName(@RequestParam String name) {
         return userResource.deleteUserByName(name);
     }

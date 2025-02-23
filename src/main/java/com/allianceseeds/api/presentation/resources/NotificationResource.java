@@ -12,8 +12,8 @@ public class NotificationResource extends BaseResource{
     }
 
     public Boolean sendDummyEmail(){
-        SendEmailCommand command = new SendEmailCommand("justinpmsmith@outlook.com", "hello world", "hello world");
-        Transformer result = messageBus.publishCommand(command);
+//        SendEmailCommand command = new SendEmailCommand(["justinpmsmith@outlook.com"], "hello world", "hello world");
+//        Transformer result = messageBus.publishCommand(command);
         return true;
     }
 }
