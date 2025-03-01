@@ -1,6 +1,7 @@
 package com.allianceseeds.api.presentation;
 
 import com.allianceseeds.api.domain.commands.customer.ContactUsCommand;
+import com.allianceseeds.api.domain.commands.customer.SellSomethingCommand;
 import com.allianceseeds.api.presentation.resources.CustomerResource;
 import com.allianceseeds.api.services.Transformer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,5 +24,10 @@ public class CustomerController {
     @PostMapping("/client/contactUs")
     public Transformer contactUS(@RequestBody ContactUsCommand contactUsCommand){
         return customerResource.contactUS(contactUsCommand);
+    }
+
+    @PostMapping("/client/sellSomething")
+    public Transformer sellSomething(@RequestBody SellSomethingCommand sellSomethingCommand){
+        return customerResource.sellSomething(sellSomethingCommand);
     }
 }

@@ -77,7 +77,9 @@ server:
 
 env:
   keycloakSecret: ${KEYCLOAK_SECRET:3ce609d6-2acf-4fc6-8285-029395ed41b4}
-
+  EMAIL_HOST_USER: ${EMAIL_HOST_USER:justinpmsmith@outlook.com}
+  ADMIN_EMAIL:  ${ADMIN_EMAIL:justinpmsmith@outlook.com}
+  BACKUP_ADMIN_EMAIL: ${BACKUP_ADMIN_EMAIL:justinpmsmith@outlook.com}
 
 
 

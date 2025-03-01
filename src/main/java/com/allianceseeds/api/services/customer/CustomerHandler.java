@@ -1,7 +1,9 @@
 package com.allianceseeds.api.services.customer;
 
+import com.allianceseeds.api.adapters.notifications.EmailAdapter;
 import com.allianceseeds.api.domain.commands.Command;
 import com.allianceseeds.api.domain.commands.customer.ContactUsCommand;
+import com.allianceseeds.api.domain.commands.customer.SellSomethingCommand;
 import com.allianceseeds.api.domain.commands.notifications.SendEmailCommand;
 import com.allianceseeds.api.services.Transformer;
 import com.allianceseeds.api.services.notifications.NotificationHandler;
@@ -12,11 +14,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class CustomerHandler {
 
-    private NotificationHandler notificationHandler;
+
+    private final EmailAdapter emailAdapter;
 
     @Autowired
-    public CustomerHandler(NotificationHandler notificationHandler) {
-        this.notificationHandler = notificationHandler;
+    public CustomerHandler(EmailAdapter emailAdapter) {
+        this.emailAdapter = emailAdapter;
     }
 
     public Transformer contactUs(Command command){
@@ -30,7 +33,7 @@ public class CustomerHandler {
 
         String subject = "Contact us message from " + name + " " + surname;
 
-        String body = "Name: " + name +
+        String body = "Name: " + name + " " + surname+
                 "\nEmail: " + email +
                 "\nCell: " + cell +
                 "\n\nMessage: " + message;
@@ -39,10 +42,35 @@ public class CustomerHandler {
 //        String[] recipients = {"cherise.nel22@gmail.com"};
         String[] recipients = {"justinpmsmith@outlook.com"};
 
-        SendEmailCommand sendEmailCommand = new SendEmailCommand(recipients, subject, body);
-        NotificationTransformer transformer = (NotificationTransformer) notificationHandler.sendEmail(sendEmailCommand);
+        Boolean emailSent = emailAdapter.sendEmail(recipients, subject, body );
 
-        return transformer;
+        return new CustomerTransformer<>(emailSent, null);
+    }
+
+    public Transformer sellSomething(Command command) {
+        SellSomethingCommand sellSomethingCommand = (SellSomethingCommand) command;
+
+        String name = sellSomethingCommand.getName();
+        String surname = sellSomethingCommand.getSurname();
+        String  cell = sellSomethingCommand.getCell();
+        String email = sellSomethingCommand.getEmail();
+        String description = sellSomethingCommand.getDescription();
+        String[] images = sellSomethingCommand.getImages();
+        String price = sellSomethingCommand.getPrice();
+
+        String body = "Name: " + name + " " + surname+
+                "\nEmail: " + email +
+                "\nCell: " + cell +
+                "\nPrice: " + price +
+                "\n\nDescription: " + description;
+
+        String[] recipients = {"justinpmsmith@outlook.com"};
+        String subject = "Sell Something";
+
+        Boolean emailSent = emailAdapter.sendEmailWithAttachments(recipients, subject, body, images );
+
+        return new CustomerTransformer<>(emailSent, null);
+
     }
 }
 

@@ -3,6 +3,7 @@ package com.allianceseeds.api.services;
 import com.allianceseeds.api.domain.commands.Command;
 import com.allianceseeds.api.domain.commands.category.*;
 import com.allianceseeds.api.domain.commands.customer.ContactUsCommand;
+import com.allianceseeds.api.domain.commands.customer.SellSomethingCommand;
 import com.allianceseeds.api.domain.commands.notifications.SendEmailCommand;
 import com.allianceseeds.api.domain.commands.product.*;
 import com.allianceseeds.api.domain.commands.user.AddUserCommand;
@@ -81,6 +82,7 @@ public class Handlers {
 
         // Customer
         commandHandlers.put(ContactUsCommand.class, this.customerHandler::contactUs);
+        commandHandlers.put(SellSomethingCommand.class, this.customerHandler::sellSomething);
 
 
 
