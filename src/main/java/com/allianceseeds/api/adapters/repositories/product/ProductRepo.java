@@ -9,6 +9,7 @@ import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -60,5 +61,24 @@ public class ProductRepo implements ProductRepoInt{
     public List<Product> getAll(){
         List<Product> all = repo.findAll();
         return all;
+    }
+
+    public List<Product> getProductsByProdCodes(List<String> prodCodes) {
+        if (prodCodes == null || prodCodes.isEmpty()) {
+            return new ArrayList<>();
+        }
+
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Product> cq = cb.createQuery(Product.class);
+        Root<Product> root = cq.from(Product.class);
+
+        // Create a predicate for prodCode IN (code1, code2, ...)
+        cq.where(root.get("prodCode").in(prodCodes));
+
+        TypedQuery<Product> query = em.createQuery(cq);
+
+        // This will only return products for prodCodes that exist in the database
+        // Missing prodCodes are automatically skipped
+        return query.getResultList();
     }
 }

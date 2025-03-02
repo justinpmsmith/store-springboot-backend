@@ -62,7 +62,7 @@ public class Handlers {
         commandHandlers.put(GetProductsByCategoryCommand.class, this.productHandler::getProductsByCategory);
         commandHandlers.put(UpdateProductCommand.class, this.productHandler::updateProduct);
         commandHandlers.put(GetProductByProdCodeCommand.class, this.productHandler::getProductByProdCode);
-
+        commandHandlers.put(ProductsSoldCommand.class, this.productHandler::handleSoldProducts);
 
 
         // Category

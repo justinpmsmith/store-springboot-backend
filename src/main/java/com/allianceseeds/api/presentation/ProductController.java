@@ -1,5 +1,6 @@
 package com.allianceseeds.api.presentation;
 
+import com.allianceseeds.api.domain.commands.product.ProductsSoldCommand;
 import com.allianceseeds.api.domain.entities.Product;
 import com.allianceseeds.api.presentation.resources.ProductResource;
 import com.allianceseeds.api.services.Transformer;
@@ -53,6 +54,12 @@ public class ProductController {
     public Transformer getAllProducts(){
         return productResource.getAllProducts();
     }
+
+    @PostMapping("/client/productsSold")
+    public Transformer productsSold(@RequestBody ProductsSoldCommand command){
+        return productResource.productsSold(command);
+    }
+
 
 
 }

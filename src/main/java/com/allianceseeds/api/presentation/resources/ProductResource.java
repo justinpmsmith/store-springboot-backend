@@ -47,4 +47,8 @@ public class ProductResource extends BaseResource{
         DeleteProductsByCategoryCommand command = new DeleteProductsByCategoryCommand(category);
         return messageBus.publishCommand(command);
     }
+
+    public Transformer productsSold(ProductsSoldCommand command){
+         return messageBus.publishCommand(command);
+    }
 }
