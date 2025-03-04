@@ -199,7 +199,7 @@ public class ProductHandler {
         if (command.getAddress() != null && !command.getAddress().isEmpty()) {
             bodyBuilder.append("If you have chosen to collect your order we will be in contact shortly to make arrangements; ")
                     .append("Otherwise you can expect your order 2-5 working days at the location you provided.\n");
-            bodyBuilder.append("Location: ").append(command.getAddress()).append("\n");
+            bodyBuilder.append("\nLocation: ").append(command.getAddress()).append("\n");
 
             // Add customer contact info
             if (command.getCell() != null && !command.getCell().isEmpty()) {

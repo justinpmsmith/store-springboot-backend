@@ -48,6 +48,7 @@ jwt:
       resource-id: allianceseeds
       principal-attribute: preferred_username  # Changed from principal_username
 
+
 logging:
   level:
     root: INFO

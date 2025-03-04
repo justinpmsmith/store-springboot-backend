@@ -280,3 +280,6 @@
 2025-03-02T18:32:52.860+02:00  INFO 26888 --- [AllianceSeedsApi] [http-nio-9091-exec-1] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2025-03-02T18:32:52.860+02:00  INFO 26888 --- [AllianceSeedsApi] [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2025-03-02T18:32:52.864+02:00  INFO 26888 --- [AllianceSeedsApi] [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2025-03-02T18:54:41.393+02:00  INFO 26888 --- [AllianceSeedsApi] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-02T18:54:41.396+02:00  INFO 26888 --- [AllianceSeedsApi] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-02T18:54:41.402+02:00  INFO 26888 --- [AllianceSeedsApi] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
