@@ -24,6 +24,7 @@ public class UserHandler {
     @Value("${env.keycloakSecret}")
     private String keycloakSecret;
 
+
     @Autowired
     public UserHandler(UserRepo userRepo) {
         this.userRepo = userRepo;

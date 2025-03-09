@@ -60,6 +60,14 @@ public class ProductController {
         return productResource.productsSold(command);
     }
 
+    @GetMapping("/admin/getSoldProducts")
+    public Transformer getSoldProducts(){
+        return productResource.getAllSoldProducts();
+    }
 
+    @GetMapping("/admin/getSoldProductById")
+    public Transformer getSoldProductById(@RequestParam Long id) {
+        return productResource.getSoldProductById(id);
+    }
 
 }

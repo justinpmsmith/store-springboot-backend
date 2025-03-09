@@ -5,7 +5,7 @@ ARG version
 
 RUN mkdir -p /allianceSeeds/api/
 
-COPY ./target/toolbox-${version}.jar /allianceSeeds/api/app.jar
+COPY ./target/allianceSeeds-${version}.jar /allianceSeeds/api/app.jar
 
 WORKDIR /allianceSeeds/api/
 

@@ -9,6 +9,7 @@ import com.allianceseeds.api.services.Transformer;
 import com.allianceseeds.api.services.notifications.NotificationHandler;
 import com.allianceseeds.api.services.notifications.NotificationTransformer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -16,6 +17,11 @@ public class CustomerHandler {
 
 
     private final EmailAdapter emailAdapter;
+
+    @Value("${env.ADMIN_EMAIL}")
+    private String adminEmail;
+    @Value("${env.BACKUP_ADMIN_EMAIL}")
+    private String backupAdminEmail;
 
     @Autowired
     public CustomerHandler(EmailAdapter emailAdapter) {
@@ -40,7 +46,7 @@ public class CustomerHandler {
 
         // TODO: use env variable for admin email addresses
 //        String[] recipients = {"cherise.nel22@gmail.com"};
-        String[] recipients = {"justinpmsmith@outlook.com"};
+        String[] recipients = {adminEmail, backupAdminEmail};
 
         Boolean emailSent = emailAdapter.sendEmail(recipients, subject, body );
 
@@ -64,7 +70,7 @@ public class CustomerHandler {
                 "\nPrice: " + price +
                 "\n\nDescription: " + description;
 
-        String[] recipients = {"justinpmsmith@outlook.com"};
+        String[] recipients = {adminEmail, backupAdminEmail};
         String subject = "Sell Something";
 
         Boolean emailSent = emailAdapter.sendEmailWithAttachments(recipients, subject, body, images );

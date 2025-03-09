@@ -63,6 +63,9 @@ public class Handlers {
         commandHandlers.put(UpdateProductCommand.class, this.productHandler::updateProduct);
         commandHandlers.put(GetProductByProdCodeCommand.class, this.productHandler::getProductByProdCode);
         commandHandlers.put(ProductsSoldCommand.class, this.productHandler::handleSoldProducts);
+        commandHandlers.put(GetSoldProductsCommand.class, this.productHandler::getAllSoldProducts);
+        commandHandlers.put(GetSoldProductByIdCommand.class, this.productHandler::getSoldProductById);
+
 
 
         // Category

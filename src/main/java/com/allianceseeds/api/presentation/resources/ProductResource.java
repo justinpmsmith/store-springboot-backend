@@ -51,4 +51,14 @@ public class ProductResource extends BaseResource{
     public Transformer productsSold(ProductsSoldCommand command){
          return messageBus.publishCommand(command);
     }
+
+    public Transformer getAllSoldProducts(){
+        GetSoldProductsCommand command = new GetSoldProductsCommand();
+        return messageBus.publishCommand(command);
+    }
+
+    public Transformer getSoldProductById(Long id) {
+        GetSoldProductByIdCommand command = new GetSoldProductByIdCommand(id);
+        return messageBus.publishCommand(command);
+    }
 }
