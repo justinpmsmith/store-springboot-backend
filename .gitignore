@@ -1,3 +1,4 @@
 /logs
 src/main/resources/application.yaml
-docker-compose.yml
+/target
+.env.docker
