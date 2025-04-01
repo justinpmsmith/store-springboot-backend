@@ -43,10 +43,6 @@ services:
       - "5432:5432"
     volumes:
       - allianceSeeds_postgres_data:/var/lib/postgresql/data
-#    environment:
-#      - POSTGRES_PASSWORD=T00l8ox4
-#      - POSTGRES_USER=allianceSeeds_admin #postgres
-#      - POSTGRES_DB=allianceSeeds
     env_file:
       - .env.docker
 
