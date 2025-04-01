@@ -55,9 +55,6 @@ services:
       - codesmith-network
     ports:
       - "8889:80"
-#    environment:
-#      PGADMIN_DEFAULT_EMAIL: justinpmsmith@outlook.com
-#      PGADMIN_DEFAULT_PASSWORD: justin.smith
     env_file:
       - .env.docker
     volumes:
