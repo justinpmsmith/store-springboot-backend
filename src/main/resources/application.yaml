@@ -7,16 +7,6 @@ spring:
     password: ${DATABASE_PASSWORD:T00l8ox4}
     driver-class-name: org.postgresql.Driver
 
-  flyway:
-    enabled: true
-    baselineOnMigrate: true  # Baseline the database
-    baselineVersion: 1       # Set baseline version
-    url: jdbc:postgresql://${DATABASE_HOST:localhost}:${DATABASE_PORT:5432}/allianceSeeds
-    user: ${DATABASE_USERNAME:allianceSeeds_admin}
-    password: ${DATABASE_PASSWORD:T00l8ox4}
-    schemas: public
-    locations: classpath:db/migration
-
 
   jpa:
     generate-ddl: true
@@ -49,21 +39,21 @@ jwt:
       principal-attribute: preferred_username  # Changed from principal_username
 
 
-logging:
-  level:
-    root: INFO
-#    org.springframework.security: INFO # Optionally, set INFO level for specific packages
-
-  file:
-    name: logs/app.log
-    max-size: 10MB
-    max-history: 30
-
-  # Optional: Configure log file patterns (if you want to include date in filenames)
-  log:
-    pattern:
-      file: "logs/app-%d{yyyy-MM-dd}.log" # Pattern for rolling log files
-      console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n" # Console log patte
+#logging:
+#  level:
+#    root: INFO
+##    org.springframework.security: INFO # Optionally, set INFO level for specific packages
+#
+#  file:
+#    name: logs/app.log
+#    max-size: 10MB
+#    max-history: 30
+#
+#  # Optional: Configure log file patterns (if you want to include date in filenames)
+#  log:
+#    pattern:
+#      file: "logs/app-%d{yyyy-MM-dd}.log" # Pattern for rolling log files
+#      console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n" # Console log patte
 
 server:
   port: ${SERVER_PORT:9091}
@@ -77,7 +67,7 @@ server:
 
 
 env:
-  keycloakSecret: ${KEYCLOAK_SECRET:3ce609d6-2acf-4fc6-8285-029395ed41b4}
+  keycloakSecret: ${KEYCLOAK_SECRET:secret}
   ADMIN_EMAIL:  ${ADMIN_EMAIL:justinpmsmith@outlook.com}
   BACKUP_ADMIN_EMAIL: ${BACKUP_ADMIN_EMAIL:justinpmsmith@outlook.com}
 
