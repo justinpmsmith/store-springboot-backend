@@ -1,4 +1,5 @@
-Springboot backend and postgres database for online store
+Springboot backend following domain driven design principals
+and postgres database for online store
 
 fully supports the admin portal to add/ remove products and categories and to view sold products
 
