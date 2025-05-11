@@ -5,6 +5,9 @@ import com.allianceseeds.api.domain.commands.category.*;
 import com.allianceseeds.api.domain.commands.customer.ContactUsCommand;
 import com.allianceseeds.api.domain.commands.customer.SellSomethingCommand;
 import com.allianceseeds.api.domain.commands.notifications.SendEmailCommand;
+import com.allianceseeds.api.domain.commands.pendingsale.CreatePendingSaleCommand;
+import com.allianceseeds.api.domain.commands.pendingsale.GetAllPendingSalesCommand;
+import com.allianceseeds.api.domain.commands.pendingsale.ProcessPaymentNotificationCommand;
 import com.allianceseeds.api.domain.commands.product.*;
 import com.allianceseeds.api.domain.commands.user.AddUserCommand;
 import com.allianceseeds.api.domain.commands.user.AuthenticateUserCommand;
@@ -12,6 +15,7 @@ import com.allianceseeds.api.domain.commands.user.DeleteUserByNameCommand;
 import com.allianceseeds.api.services.category.CategoryHandler;
 import com.allianceseeds.api.services.customer.CustomerHandler;
 import com.allianceseeds.api.services.notifications.NotificationHandler;
+import com.allianceseeds.api.services.pendingsale.PendingSaleHandler;
 import com.allianceseeds.api.services.product.ProductHandler;
 import com.allianceseeds.api.services.user.UserHandler;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,15 +40,17 @@ public class Handlers {
 
     private final CustomerHandler customerHandler;
 
+    private final PendingSaleHandler pendingSaleHandler;
 
     @Autowired
-    public Handlers(NotificationHandler notificationHandler, ProductHandler productHandler, CategoryHandler categoryHandler, UserHandler userHandler, CustomerHandler customerHandler) {
+    public Handlers(NotificationHandler notificationHandler, ProductHandler productHandler, CategoryHandler categoryHandler, UserHandler userHandler, CustomerHandler customerHandler, PendingSaleHandler pendingSaleHandler) {
 
         this.notificationHandler = notificationHandler;
         this.productHandler = productHandler;
         this.categoryHandler = categoryHandler;
         this.userHandler = userHandler;
         this.customerHandler = customerHandler;
+        this.pendingSaleHandler = pendingSaleHandler;
 
 
         commandHandlers = new HashMap<>();
@@ -87,7 +93,10 @@ public class Handlers {
         commandHandlers.put(ContactUsCommand.class, this.customerHandler::contactUs);
         commandHandlers.put(SellSomethingCommand.class, this.customerHandler::sellSomething);
 
-
+        // Pending sale
+        commandHandlers.put(CreatePendingSaleCommand.class, this.pendingSaleHandler::createPendingSale);
+        commandHandlers.put(GetAllPendingSalesCommand.class, this.pendingSaleHandler::getAllPendingSales);
+        commandHandlers.put(ProcessPaymentNotificationCommand.class, this.pendingSaleHandler::processPaymentNotification);
 
 
 
