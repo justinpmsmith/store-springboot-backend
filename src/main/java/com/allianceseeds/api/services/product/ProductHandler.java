@@ -115,6 +115,23 @@ public class ProductHandler {
 
         return new ProductTransformer<>(true, inStockProducts);
     }
+    public Transformer getCategoryProdCodes(Command command) {
+        String category = ((GetCategoryProdCodesCommand) command).getCategory();
+        List<Product> prodList = productRepo.getProductsByStringField("category", category);
+
+        // Filter out products with quantity <= 0
+        List<Product> inStockProducts = prodList.stream()
+                .filter(product -> product.getQuantity() > 0)
+                .collect(Collectors.toList());
+
+        // Extract just the prodCodes from the in-stock products
+        List<String> prodCodes = inStockProducts.stream()
+                .map(Product::getProdCode)
+                .collect(Collectors.toList());
+
+        return new ProductTransformer<>(true, prodCodes);
+    }
+
 
     public Transformer getAllProducts(Command command){
         List<Product> products = productRepo.getAll();
@@ -261,7 +278,7 @@ public class ProductHandler {
         }
 
         // Create subject line
-        String subject = "Alliance Seeds Purchase Confirmation";
+        String subject = "SportVest Purchase Confirmation";
 
         // Create the email body
         StringBuilder bodyBuilder = new StringBuilder();
@@ -271,7 +288,7 @@ public class ProductHandler {
         // Add shipping information if available
         if (command.getAddress() != null && !command.getAddress().isEmpty()) {
             bodyBuilder.append("If you have chosen to collect your order we will be in contact shortly to make arrangements; ")
-                    .append("Otherwise you can expect your order 2-5 working days at the location you provided.\n");
+                    .append("Otherwise you can expect your order in 2-5 working days at the location you provided.\n");
             bodyBuilder.append("\nLocation: ").append(command.getAddress()).append("\n");
 
             // Add customer contact info

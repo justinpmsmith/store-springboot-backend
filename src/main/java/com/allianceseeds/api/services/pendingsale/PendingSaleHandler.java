@@ -225,7 +225,7 @@ public class PendingSaleHandler {
         }
 
         // Create subject line
-        String subject = "Alliance Seeds Purchase Confirmation";
+        String subject = "Sportvest Purchase Confirmation";
 
         // Create the email body
         StringBuilder bodyBuilder = new StringBuilder();
@@ -235,7 +235,7 @@ public class PendingSaleHandler {
         // Add shipping information if available
         if (pendingSale.getAddress() != null && !pendingSale.getAddress().isEmpty()) {
             bodyBuilder.append("If you have chosen to collect your order we will be in contact shortly to make arrangements; ")
-                    .append("Otherwise you can expect your order 2-5 working days at the location you provided.\n");
+                    .append("Otherwise you can expect your order in 2-5 working days at the location you provided.\n");
             bodyBuilder.append("\nLocation: ").append(pendingSale.getAddress()).append("\n");
 
             // Add customer contact info

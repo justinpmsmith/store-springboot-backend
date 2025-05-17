@@ -50,6 +50,12 @@ public class ProductController {
         return productResource.getProductsByCategory(category);
     }
 
+    @GetMapping("/client/getCategoryProdCodes")
+    public Transformer getCategoryProdCodes(@RequestParam String category) {
+        return productResource.getCategoryProdCodes(category);
+    }
+
+
     @GetMapping("/client/getAllProducts")
     public Transformer getAllProducts(){
         return productResource.getAllProducts();

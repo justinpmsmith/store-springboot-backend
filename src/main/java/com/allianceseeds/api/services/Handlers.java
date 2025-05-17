@@ -71,7 +71,8 @@ public class Handlers {
         commandHandlers.put(ProductsSoldCommand.class, this.productHandler::handleSoldProducts);
         commandHandlers.put(GetSoldProductsCommand.class, this.productHandler::getAllSoldProducts);
         commandHandlers.put(GetSoldProductByIdCommand.class, this.productHandler::getSoldProductById);
-
+// In the Handlers.java file, add this line in the constructor:
+        commandHandlers.put(GetCategoryProdCodesCommand.class, this.productHandler::getCategoryProdCodes);
 
 
         // Category

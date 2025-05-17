@@ -13,13 +13,13 @@ services:
   allianceseeds-api:
     container_name: allianceseeds-api
     hostname: allianceseeds-api
-    image: allianceseeds-api:1.0.3-rc1
+    image: allianceseeds-api:1.0.4
     restart: unless-stopped
     build:
       context: .
       dockerfile: Dockerfile
       args:
-        version: 1.0.3-rc1
+        version: 1.0.4
     networks:
       - codesmith-network
     ports:
