@@ -3,8 +3,8 @@ spring:
     name: AllianceSeedsApi
   datasource:
     url: jdbc:postgresql://${DATABASE_HOST:localhost}:${DATABASE_PORT:5432}/allianceSeeds
-    username: ${DATABASE_USERNAME:allianceSeeds_admin}
-    password: ${DATABASE_PASSWORD:T00l8ox4}
+    username: ${DATABASE_USERNAME:}
+    password: ${DATABASE_PASSWORD:}
     driver-class-name: org.postgresql.Driver
 
 
@@ -18,7 +18,7 @@ spring:
     host: ${EMAIL_HOST_SERVER:smtp.sportvest.co.za}
     port: 587
     username: ${EMAIL_HOST_USER:cnel@sportvest.co.za}
-    password: ${EMAIL_HOST_PASSWORD:efq4Fk@a$8x8hd}
+    password: ${EMAIL_HOST_PASSWORD:}
     properties.mail.smtp:
       auth: true
       starttls.enable: true
@@ -67,7 +67,7 @@ server:
 
 
 env:
-  keycloakSecret: ${KEYCLOAK_SECRET:3ce609d6-2acf-4fc6-8285-029395ed41b4}
+  keycloakSecret: ${KEYCLOAK_SECRET:}
   ADMIN_EMAIL:  ${ADMIN_EMAIL:justinpmsmith@outlook.com}
   BACKUP_ADMIN_EMAIL: ${BACKUP_ADMIN_EMAIL:justinpmsmith@outlook.com}
 
